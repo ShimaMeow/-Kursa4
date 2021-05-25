@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" action="/Home/Editing">
+    <div class="input-group" style="margin-top:20px">
+        <span  class="input-group-text">ФИО</span>
+        <input  type="text" name="Surname" class="form-control" value="@ViewBag.Student.Surname" />
+        <input  type="text" name="Name" class="form-control" value="@ViewBag.Student.Name" />
+        <input  type="text" name="Patronymic" class="form-control" value="@ViewBag.Student.Patronymic" />
+    </div>
+    <div class="row" style="margin-top:25px">
+        <div class="col">
+            <label class="col-form-label"></label>
+            <input  type="text" name="State" class="form-control" value="@ViewBag.Student.State" />
+        </div>
+        <div class="col">
+            <label  class="col-form-label"></label>
+            <input  type="text" name="Course" class="form-control" value="@ViewBag.Student.Course" />
+        </div>
+        <div class="col">
+            <label for="Date" class="col-form-label"></label>
+            <input  type="date" name="Date" class="form-control" value="@ViewBag.Student.Date.ToString("yyyy-MM-dd")" />
+        </div>
+    </div>
+    <div class="row justify-content-end">
+        <div class="col justify-content-end" style="margin-top:25px">
+            <button  type="submit" class="btn btn-light" style="margin-left: 1005px;">Сохранить</button>
+        </div>
+    </div>
+    <input  type="hidden" name="id" value="@ViewBag.Student.id" />
+</form>
+
+<form method="post" action="/Home/Delete">
+	<a href="/Home/Index" role="button" class="btn btn-light" style="margin-right: 950px">Назад</a>
+	<button style="margin-top: 20px" type="submit" value="@ViewBag.Student.id" name="id" class="btn btn-light">Удалить</button>
+</form>
